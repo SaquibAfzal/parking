@@ -27,8 +27,8 @@ html, body {
 }
 
 .form-holder .form-content {
-    position: relative;
-    text-align: center;
+    position: absolute;
+    text-align: left;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -113,7 +113,7 @@ html, body {
 }
 
 .form-content textarea {
-    position: static !important;
+    /* position: static !important; */
     width: 100%;
     padding: 8px 20px;
     border-radius: 6px;
@@ -149,3 +149,20 @@ html, body {
 .valid-feedback{
    color: #2acc80;
 }
+
+#searchresult {
+    margin-top: 235px;
+    margin-bottom: 100px;
+    /* margin-right: 50px; */
+    border: 5px solid white;
+    border-radius: 15px;
+    max-height: 454px;
+    padding: 40px;
+    max-width: 600px;
+    display:flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: left;
+    position: relative;
+  }
