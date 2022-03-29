@@ -20,6 +20,12 @@ def search(request):
         return redirect('/login')
         # Do something for authenticated users.
     return render(request, 'search.html')
+def display(request):
+    print(request.user)
+    if request.user.is_anonymous:
+        return redirect('/login')
+        # Do something for authenticated users.
+    return render(request, 'display.html')
 
 
 def loginuser(request):
