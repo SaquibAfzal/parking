@@ -3,6 +3,7 @@
   <head>
     <!-- Required meta tags -->
     
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,9 +13,12 @@
     <!-- My Customed CSS -->
     <!-- <link rel="stylesheet" href="/style.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
     {%load static%}
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static "/style.css" %}">
     <title>Search Page</title>
   </head>
+  <style>
+    overflow: hidden;
+  </style>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">PARK WITH EASE</a>
@@ -84,7 +88,7 @@
                                <div class="invalid-feedback">Username field cannot be blank!</div>
                             </div>
 
-                            <div class="col-md-12 my-3">
+                            <div class="col-md-12 py-3">
                                 <input class="form-control" type="alphanumeric" name="alphanumeric" placeholder=" Enter vehicle number " required>
                                  <div class="valid-feedback">Vehicle number field is valid!</div>
                                  <div class="invalid-feedback">Vehicle number cannot be blank!</div>
@@ -126,7 +130,7 @@
 
                         <div class="form-check mx-3 py-1">
                           <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                          <label class="form-check-label">I confirm that all data are correct.</label>
+                          <label class="form-check-label">I confirm that all data are correct</label>
                          <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
                         </div>
                   
