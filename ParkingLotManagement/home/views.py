@@ -25,6 +25,8 @@ def search(request):
         return redirect('/login')
         # Do something for authenticated users.
     return render(request, 'search.html')
+
+
 def display(request):
     print(request.user)
     if request.user.is_anonymous:
@@ -71,7 +73,7 @@ def search(request):
             message = "Vehicle found!!"
             k = True
 
-    return render(request, 'search.html', {'req': req, 'message': message, 'flag':k})
+    return render(request, 'search.html', {'req': req, 'message': message, 'flag': k})
 
 
 def display(request):
@@ -89,5 +91,8 @@ def display(request):
     p10 = parkingSpots.objects.all()[9]
     p11 = parkingSpots.objects.all()[10]
     p12 = parkingSpots.objects.all()[11]
-    return render(request,'display.html',{'p1':p1, 'p2':p2,'p3':p3,'p4':p4,'p5':p5,'p6':p6,'p7':p7,'p8':p8,'p9':p9,'p10':p10,'p11':p11,'p12':p12, 'vac':vac})
-    
+    return render(request, 'display.html', {'p1': p1, 'p2': p2, 'p3': p3, 'p4': p4, 'p5': p5, 'p6': p6, 'p7': p7, 'p8': p8, 'p9': p9, 'p10': p10, 'p11': p11, 'p12': p12, 'vac': vac})
+
+
+def exit(request):
+    return render(request, 'exit.html')
