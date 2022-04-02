@@ -139,7 +139,7 @@ def exit(request):
             outtiming = datetime.datetime.now().time()
             outepoch = time.time()
             timespent = outepoch-inepoch
-            charges = (timespent/60)
+            charges = round((timespent/60))
             parkingSpots.objects.filter(vehicle_no=vno).update(
                 vehicle_no=0, vehicle_type="", owner_name="", occupancy=0, in_time=datetime.datetime.now().time(), in_epoch=0)
 
