@@ -107,23 +107,48 @@ def exit(request):
     message = ""
     req = None
     k = False
+    o_name = ""
+    v_number = ""
+    v_type = ""
+    r_no = 0
+    p_no = 0
+    intiming = None
+    inepoch = 0
+    outtiming = None
+    outepoch = 0
+    timespent = 0
+    charges = 0
     if request.method == 'POST':
         ownername = request.POST.get('ownername')
         vno = request.POST.get('vno')
         if parkingSpots.objects.filter(vehicle_no=vno):
             req = parkingSpots.objects.get(vehicle_no=vno)
         if req == None:
-            message = "Vehicle not found"
+            message = "Vehicle was not found in the parking lot"
             k = False
         else:
             message = "Vehicle found!!"
             k = True
-    return render(request, 'exit.html')
+            o_name = req.owner_name
+            v_number = req.vehicle_no
+            v_type = req.vehicle_type
+            r_no = req.row_no
+            p_no = req.pos_no
+            intiming = req.in_time
+            inepoch = req.in_epoch
+            outtiming = datetime.datetime.now().time()
+            outepoch = time.time()
+            timespent = outepoch-inepoch
+            charges = (timespent/60)
+            parkingSpots.objects.filter(vehicle_no=vno).update(
+                vehicle_no=0, vehicle_type="", owner_name="", occupancy=0, in_time=datetime.datetime.now().time(), in_epoch=0)
+
+    return render(request, 'exit.html', {'message': message, 'flag': k, 'rate': "Parking rate is Rs. 60 per hour", 'oname': o_name, 'v_number': v_number, 'v_type': v_type, 'r_no': r_no, 'p_no': p_no, 'intiming': intiming, 'outtiming': outtiming, 'charges': charges})
 
 
 def entry(request):
     message = ""
-    k = 5
+    k = None
     if request.method == 'POST':
         ownername = request.POST.get('ownername')
         vno = request.POST.get('vno')
@@ -132,7 +157,7 @@ def entry(request):
         pno = request.POST.get('pno')
         if (parkingSpots.objects.get(row_no=rno, pos_no=pno).occupancy == 0):
             parkingSpots.objects.filter(row_no=rno, pos_no=pno).update(
-                vehicle_no=vno, vehicle_type=vtype, owner_name=ownername, occupancy=1, in_time=datetime.datetime.now().time())
+                vehicle_no=vno, vehicle_type=vtype, owner_name=ownername, occupancy=1, in_time=datetime.datetime.now().time(), in_epoch=time.time())
             message = "Vehicle Parked"
             k = 1
         else:

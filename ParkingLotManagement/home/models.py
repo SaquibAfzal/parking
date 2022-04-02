@@ -5,10 +5,11 @@ import time
 
 
 class parkingSpots(models.Model):
-    owner_name = models.CharField(max_length=122,blank=True)
-    vehicle_type = models.CharField(max_length=122,blank=True)
-    vehicle_no = models.CharField(max_length=122,blank=True)
+    owner_name = models.CharField(max_length=122, blank=True)
+    vehicle_type = models.CharField(max_length=122, blank=True)
+    vehicle_no = models.CharField(max_length=122, blank=True)
     row_no = models.SmallIntegerField()
     pos_no = models.SmallIntegerField()
     occupancy = models.SmallIntegerField()
     in_time = models.TimeField()
+    in_epoch = models.FloatField(default=0000, null=True, blank=True)
