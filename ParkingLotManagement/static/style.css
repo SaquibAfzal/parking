@@ -168,12 +168,13 @@ html, body {
     text-align: left;
     position: relative;
   }
-  .btn-logout{
-      background-color: #090229;
+.btn-logout{
+    background-color: #090229;
     }
-    #search-reset{
-        margin-left: 200px;
-        margin-right: 200px;
-        margin-top: 240px;
-        position: absolute;
+
+#search-reset{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 240px;
+    position: absolute;
     }
