@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+    <title>Entry details</title>
+</head>
+<body>
+   
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Vehicle Entry</h3>
+                        <p>Enter details of your vehicle.</p>
+                        <form class="requires-validation" novalidate>
+
+                            <div class="col-md-12 ">
+                               <input class="form-select mt-3 " type="text" name="name" style="padding-right:0px; padding-left:0px;" placeholder="     Owner's Name" required>
+                               {% comment %} <div class="valid-feedback">Username field is valid!</div>
+                               <div class="invalid-feedback">Username field cannot be blank!</div> {% endcomment %}
+                            </div>
+
+                            {% comment %} <div class="col-md-12">
+                                <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+                                 <div class="valid-feedback">Email field is valid!</div>
+                                 <div class="invalid-feedback">Email field cannot be blank!</div>
+                            </div> {% endcomment %}
+
+                           <div class="col-md-12">
+                                <select class="form-select mt-3" required>
+                                      <option selected disabled value="">Preffered position</option>
+                                      <option value="jweb">Position 1</option>
+                                      <option value="sweb">Position 2</option>
+                                      <option value="pmanager">Position 3</option>
+                                      <option value="pmanager">Position 4</option>
+                               </select>
+                                {% comment %} <div class="valid-feedback">You selected a position!</div>
+                                <div class="invalid-feedback">Please select a position!</div> {% endcomment %}
+                           </div>
+                           <div class="col-md-12">
+                            <select class="form-select mt-3" required>
+                                  <option selected disabled value="">Preffered row</option>
+                                  <option value="jweb">Row 1</option>
+                                  <option value="sweb">Row 2</option>
+                                  <option value="pmanager">Row 3</option>
+                                
+                           </select>
+                            {% comment %} <div class="valid-feedback">You selected a position!</div>
+                            <div class="invalid-feedback">Please select a position!</div> {% endcomment %}
+                       </div>
+
+
+                           <div class="col-md-12">
+                              <input class="form-select mt-3" type="text" name="vno" style="padding-right:0px; padding-left:0px;" placeholder="      Vehicle's Number" required>
+                               {% comment %} <div class="valid-feedback">Password field is valid!</div>
+                               <div class="invalid-feedback">Password field cannot be blank!</div> {% endcomment %}
+                           </div>
+                           <div class="col-md-12">
+                            <input class="form-select mt-3" type="text" name="vtype" style="padding-right:0px; padding-left:0px;" placeholder="      Vehicle's type" required>
+                             {% comment %} <div class="valid-feedback">Password field is valid!</div>
+                             <div class="invalid-feedback">Password field cannot be blank!</div> {% endcomment %}
+                         </div>
+
+
+                           {% comment %} <div class="col-md-12 mt-3">
+                            <label class="mb-3 mr-1" for="gender">Gender: </label>
+
+                            <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+
+                            <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+
+                            <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
+                               <div class="valid-feedback mv-up">You selected a gender!</div>
+                                <div class="invalid-feedback mv-up">Please select a gender!</div>
+                            </div>
+
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                          <label class="form-check-label">I confirm that all data are correct</label>
+                         <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+                        </div> {% endcomment %}
+                  
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn  btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

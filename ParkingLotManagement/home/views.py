@@ -31,6 +31,13 @@ def display(request):
         return redirect('/login')
         # Do something for authenticated users.
     return render(request, 'display.html')
+    
+def details(request):
+    print(request.user)
+    if request.user.is_anonymous:
+        return redirect('/login')
+        # Do something for authenticated users.
+    return render(request, 'details.html')
 
 
 def loginuser(request):
