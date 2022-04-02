@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+import time
 # Create your models here.
 
 
@@ -10,4 +11,4 @@ class parkingSpots(models.Model):
     row_no = models.SmallIntegerField()
     pos_no = models.SmallIntegerField()
     occupancy = models.SmallIntegerField()
-    in_time = models.TimeField(datetime.time)
+    in_time = models.TimeField()
