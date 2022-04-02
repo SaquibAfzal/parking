@@ -10,5 +10,4 @@ urlpatterns = [
     path('search', views.search, name='search'),
     path('display', views.display, name='display'),
     path('details', views.details, name='details'),
-    path('exit', views.exit, name='exit')
 ]
