@@ -1,4 +1,4 @@
 from django.contrib import admin
-from home.models import searching
+from home.models import parkingSpots
 # Register your models here.
-admin.site.register(searching)
+admin.site.register(parkingSpots)
