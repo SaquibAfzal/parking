@@ -25,6 +25,7 @@ html, body {
       text-align: center;
       max-height: 400px;
       margin-top: 235px;
+      position: relative;
 }
 
 .form-holder .form-content {
